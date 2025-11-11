@@ -26,7 +26,7 @@ boudary_facets = mesh.exterior_facet_indices(domain.topology)
 boundary_dofs = fem.locate_dofs_topological(V, fdim, boudary_facets)
 dc = fem.dirichletbc(uD, boundary_dofs)
 
-#Deniindo o trial e a função de teste
+#Definindo o trial e a função de teste
 u = ufl.TrialFunction(V)
 v = ufl.TestFunction(V)
 

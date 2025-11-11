@@ -53,6 +53,7 @@ problem = LinearProblem(
     petsc_options={"ksp_type": "preonly", "pc_type": "lu", "ksp_error_if_not_converged": True},
 )
 uh = problem.solve()
+
 assert isinstance(uh, fem.Function)
 uh.name = "Velocidade"
 with io.XDMFFile(msh.comm, "out_poisson/poisson.xdmf", "w") as file:
