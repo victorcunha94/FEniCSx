@@ -36,7 +36,7 @@ dy_val = Ly / Ny_cells
 dt = CFL * min(dx_val / abs(v_x) if v_x != 0 else 1e6,
                dy_val / abs(v_y) if v_y != 0 else 1e6)
 
-T = 0.5
+T = 35.0
 num_steps = int(np.ceil(T / dt))
 dt = float(T / num_steps)  # reajusta dt para dividir T exatamente
 
@@ -114,7 +114,7 @@ print(f"Injection nodes count: {len(injection_nodes)}")
 
 
 # aplica condição inicial: domínio óleo (0) já definida; injetor = 1
-#s.x.array[:] = 0.0
+s.x.array[:] = 0.0
 for idx in injection_nodes:
     s.x.array[idx] = 1.0
 
